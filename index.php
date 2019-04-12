@@ -6,7 +6,7 @@
 // Fetching data that is entered by the user
 $email = 'batchcsee3@gmail.com';
 $password = 'Y9637912109';
-$to_id = 'yashjaiswal123@gmail.com';
+$to_id = 'yashjaiswal.123@gmail.com';
 $message = 'hquihxui';
 $subject = 'eudhuiehd';
 
