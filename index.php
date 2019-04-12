@@ -2,8 +2,7 @@
 <?php
 
  //PHP Script
-if(isset($_POST['send']))
-{
+
 // Fetching data that is entered by the user
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -34,8 +33,5 @@ echo '<p id="para">'.$error.'</p>';
 else {
 echo '<p id="para">Message sent!</p>';
 }
-}
-else{
-echo '<p id="para">Please enter valid data</p>';
-}
+
 ?>
