@@ -4,11 +4,11 @@
  //PHP Script
 
 // Fetching data that is entered by the user
-$email = $_POST['email'];
-$password = $_POST['password'];
-$to_id = $_POST['toid'];
-$message = $_POST['message'];
-$subject = $_POST['subject'];
+$email = 'batchcsee3@gmail.com';
+$password = 'Y9637912109';
+$to_id = 'yashjaiswal123@gmail.com';
+$message = 'hquihxui';
+$subject = 'eudhuiehd';
 
 // Configuring SMTP server settings
 $mail = new PHPMailer;
