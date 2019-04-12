@@ -1,30 +1,41 @@
-<html>
-   
-   <head>
-      <title>Sending HTML email using PHP</title>
-   </head>
-   
-   <body>
-      
-      <?php
-         $to = "yashjaiswal123.yj@gmail.com";
-         $subject = "This is subject";
-         
-         $message = "<b>This is HTML message.</b>";
-         $message .= "<h1>This is headline.</h1>";
-         
-         $header = "From:batchcsee3@gmail.com \r\n";
-         $header .= "MIME-Version: 1.0\r\n";
-         $header .= "Content-type: text/html\r\n";
-         
-         $retval = mail ($to,$subject,$message,$header);
-         
-         if( $retval == true ) {
-            echo "Message sent successfully...";
-         }else {
-            echo "Message could not be sent...";
-         }
-      ?>
-      
-   </body>
-</html>
+
+<?php
+
+ //PHP Script
+if(isset($_POST['send']))
+{
+// Fetching data that is entered by the user
+$email = $_POST['email'];
+$password = $_POST['password'];
+$to_id = $_POST['toid'];
+$message = $_POST['message'];
+$subject = $_POST['subject'];
+
+// Configuring SMTP server settings
+$mail = new PHPMailer;
+$mail->isSMTP();
+$mail->Host = 'smtp.gmail.com';
+$mail->Port = 587;
+$mail->SMTPSecure = 'tls';
+$mail->SMTPAuth = true;
+$mail->Username = $email;
+$mail->Password = $password;
+
+// Email Sending Details
+$mail->addAddress($to_id);
+$mail->Subject = $subject;
+$mail->msgHTML($message);
+
+// Success or Failure
+if (!$mail->send()) {
+$error = "Mailer Error: " . $mail->ErrorInfo;
+echo '<p id="para">'.$error.'</p>';
+}
+else {
+echo '<p id="para">Message sent!</p>';
+}
+}
+else{
+echo '<p id="para">Please enter valid data</p>';
+}
+?>
